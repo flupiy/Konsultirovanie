@@ -1,0 +1,255 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(145deg, #e0f2f1 0%, #b2dfdb 100%);
+    min-height: 100vh;
+    padding: 2rem 1.5rem;
+    color: #004d40;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 2.5rem;
+    padding: 2rem 2.5rem 3rem;
+    box-shadow: 0 20px 40px -12px rgba(0, 80, 70, 0.4);
+    border: 1px solid rgba(0, 150, 136, 0.2);
+}
+
+/* Шапка */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #00897b;
+    padding-bottom: 1.2rem;
+    margin-bottom: 2.5rem;
+}
+
+.header h1 {
+    font-size: 1.9rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #00695c, #00796b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+}
+
+.header .badge {
+    background: #00695c;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 40px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 4px 8px rgba(0, 105, 92, 0.2);
+}
+
+.header .badge i {
+    margin-right: 0.5rem;
+}
+
+/* Сетка карточек */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 0.5rem;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 1.8rem;
+    padding: 1.6rem 1.5rem 1.8rem;
+    box-shadow: 0 8px 20px rgba(0, 130, 120, 0.12);
+    border: 1px solid rgba(0, 150, 136, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.25s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 30px -8px rgba(0, 130, 120, 0.25);
+    border-color: #00897b;
+}
+
+.card-icon {
+    font-size: 2.4rem;
+    color: #00796b;
+    margin-bottom: 0.5rem;
+}
+
+.card h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #004d40;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.card h3 i {
+    font-size: 1.2rem;
+    color: #00897b;
+}
+
+.card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #1e4a45;
+    margin-bottom: 1rem;
+    flex: 1;
+}
+
+.card .meta {
+    font-size: 0.8rem;
+    color: #3e6b64;
+    background: rgba(0, 150, 136, 0.08);
+    padding: 0.3rem 0.9rem;
+    border-radius: 30px;
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    align-self: flex-start;
+}
+
+/* Кнопки / ссылки */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: #00796b;
+    color: white;
+    padding: 0.6rem 1.4rem;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: 0.2s;
+    border: none;
+    cursor: pointer;
+    margin-top: auto;
+    width: fit-content;
+    box-shadow: 0 4px 8px rgba(0, 121, 107, 0.2);
+}
+
+.btn i {
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background: #004d40;
+    transform: scale(1.02);
+    box-shadow: 0 6px 14px rgba(0, 77, 64, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #00796b;
+    border: 1.5px solid #00796b;
+    box-shadow: none;
+}
+
+.btn-outline:hover {
+    background: #00796b;
+    color: white;
+}
+
+.photo-preview {
+    width: 100%;
+    height: 140px;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    margin-bottom: 0.8rem;
+    background: #b2dfdb;
+}
+
+.photo-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.photo-preview span {
+    background: rgba(0, 105, 92, 0.1);
+    padding: 0.3rem 1rem;
+    border-radius: 30px;
+    backdrop-filter: blur(4px);
+}
+
+/* Список для сценария */
+.scenario-list {
+    list-style: none;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0.2rem 0 0.8rem;
+}
+
+.scenario-list li {
+    padding: 0.2rem 0 0.2rem 1.8rem;
+    position: relative;
+}
+
+.scenario-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #00897b;
+    font-weight: bold;
+}
+
+/* Подвал */
+.footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 150, 136, 0.25);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: #1e5a52;
+}
+
+.footer i {
+    color: #00897b;
+    margin-right: 0.3rem;
+}
+
+/* Адаптив */
+@media (max-width: 650px) {
+    .container {
+        padding: 1.5rem;
+    }
+    .header h1 {
+        font-size: 1.4rem;
+    }
+    .grid {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
